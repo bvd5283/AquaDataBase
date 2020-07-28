@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="562.0" prefWidth="679.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="ResidentFunctionManage.SearchOfficalDataController">
+   <children>
+      <Label fx:id="ResultBG" contentDisplay="CENTER" layoutX="27.0" layoutY="211.0" prefHeight="327.0" prefWidth="627.0" style="-fx-background-color: #3FBFBF;" text="" textAlignment="CENTER" textFill="#56794e" wrapText="true">
+         <font>
+            <Font name="System Bold" size="50.0" />
+         </font>
+      </Label>
+      <Label fx:id="helloTxt" alignment="CENTER_LEFT" layoutX="35.0" layoutY="22.0" prefWidth="400.0" text="Search Official Water Data ">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="SearchBG" contentDisplay="CENTER" layoutX="27.0" layoutY="69.0" prefHeight="136.0" prefWidth="544.0" style="-fx-background-color: #d0d6d5;" text="" textAlignment="CENTER" textFill="#56794e" wrapText="true">
+         <font>
+            <Font name="System Bold" size="50.0" />
+         </font>
+      </Label>
+      <Label fx:id="StreetNameTag" alignment="CENTER_RIGHT" layoutX="47.0" layoutY="123.0" text="Address">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="STNameField" layoutX="135.0" layoutY="121.0" prefWidth="150.0" />
+      <Label fx:id="ZipCodeTag" alignment="CENTER_RIGHT" layoutX="47.0" layoutY="158.0" text="Zip Code">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="DateTag" alignment="CENTER_RIGHT" layoutX="47.0" layoutY="83.0" text="Date">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="STNumField1" layoutX="136.0" layoutY="155.0" prefWidth="150.0" />
+      <DatePicker fx:id="TestDatePicker1" layoutX="135.0" layoutY="79.0" prefWidth="150.0" />
+      <Button fx:id="submitButton" layoutX="323.0" layoutY="169.0" mnemonicParsing="false" onAction="#handleSubmit" prefHeight="27.0" prefWidth="100.0" text="Search" />
+      <TableView fx:id="UserLeadTable" layoutX="27.0" layoutY="223.0" prefHeight="303.0" prefWidth="611.0">
+         <columns>
+            <TableColumn fx:id="LeadDateCol2" prefWidth="64.0" text="Address" />
+            <TableColumn fx:id="LeadDateCol1" prefWidth="64.0" text="Date" />
+            <TableColumn fx:id="LeadDateCol" prefWidth="64.0" text="Zip" />
+            <TableColumn fx:id="Lead2BK250Col" prefWidth="107.0" text="Lead250ml" />
+            <TableColumn fx:id="Lead2BK750Col" prefWidth="75.0" text="Lead750ml" />
+            <TableColumn fx:id="Lead2BK1000Col" prefWidth="75.0" text="Lead1Liter" />
+            <TableColumn fx:id="Lead1BK250Col" prefWidth="87.0" text="Copper250ml" />
+            <TableColumn fx:id="Lead1BK750Col" prefWidth="89.0" text="Copper750ml" />
+            <TableColumn fx:id="Lead1BK1000Col" prefWidth="84.0" text="Copper1Liter" />
+         </columns>
+      </TableView>
+      <Button fx:id="submitButton1" layoutX="443.0" layoutY="169.0" mnemonicParsing="false" onAction="#handleReset" prefHeight="27.0" prefWidth="100.0" text="Reset" />
+      <Button fx:id="BackButton" layoutX="594.0" layoutY="47.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="20.0" prefWidth="66.0" text="Back" />
+      <DatePicker fx:id="TestDatePicker2" layoutX="313.0" layoutY="79.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>
