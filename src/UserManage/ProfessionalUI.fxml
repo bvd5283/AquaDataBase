@@ -11,7 +11,7 @@
       <Button layoutX="101.0" layoutY="132.0" mnemonicParsing="false" onAction="#handleDataHistory" prefHeight="68.0" prefWidth="130.0" text="Data History" />
       <Button layoutX="362.0" layoutY="132.0" mnemonicParsing="false" onAction="#handleUploadData" prefHeight="68.0" prefWidth="130.0" text="Upload Data" />
       <Button layoutX="514.0" layoutY="56.0" mnemonicParsing="false" onAction="#handleLogOut" text="Log Out" />
-      <Text layoutX="50.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome," wrappingWidth="324.13671875">
+      <Text fx:id="helloTxt" layoutX="50.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome," wrappingWidth="324.13671875">
          <font>
             <Font size="21.0" />
          </font>

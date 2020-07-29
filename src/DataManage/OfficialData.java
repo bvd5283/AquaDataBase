@@ -10,7 +10,7 @@ package DataManage;
  * @author BinnanDong
  */
 public class OfficialData {
-    private String Address;
+   private String Address;
     private String Date;
     private String Zip;
     private Integer Lead250;

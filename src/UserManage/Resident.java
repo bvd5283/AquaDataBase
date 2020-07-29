@@ -5,7 +5,7 @@
  */
 package UserManage;
 
-import DataManage.UserWaterData;
+import DataManage.ResidentWaterData;
 import DataManage.Profile;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ import java.util.ArrayList;
  * @author Bingnan Dong
  */
 public class Resident extends User{
-    private ArrayList<UserWaterData> UWData;
+    private ArrayList<ResidentWaterData> UWData;
     
     private ArrayList<Profile> profile;
  
@@ -42,7 +42,7 @@ public class Resident extends User{
      * @return a UserWaterData list of a Resident
      */
     
-   public ArrayList<UserWaterData> getUWData(String username){
+   public ArrayList<ResidentWaterData> getUWData(String username){
         return UWData;
     }
    
@@ -63,7 +63,7 @@ public class Resident extends User{
      * @param UWData a UserWaterData list of a Resident 
      */
     
-   public void setUserWaterData(ArrayList<UserWaterData> UWData)
+   public void setUserWaterData(ArrayList<ResidentWaterData> UWData)
    {
        this.UWData = UWData;
    }

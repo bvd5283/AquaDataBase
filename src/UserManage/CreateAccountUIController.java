@@ -104,7 +104,7 @@ public class CreateAccountUIController implements Initializable {
           //insert user data in DB
          User user= new User(fName,lName,uName,email,password ,dateofBirth,userType);
          insertUserInDB(user);
-       userStatus.setText("Account has saved in DB");  
+         userStatus.setText("Account has saved in DB");  
          handleGoBack(event);
      
     }

@@ -5,13 +5,19 @@
  */
 package UserManage;
 
+import ProfessionalFunctionManage.UploadOWDataController;
+import ProfessionalFunctionManage.ViewOWDataController;
+import flintwater.FlintWater;
 import flintwater.Navigation;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.text.Text;
 
@@ -30,7 +36,7 @@ public class ProfessionalUIController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        //helloTxt.setText("Welcome, " +  loginUser.getUsername() +"   ");
+        helloTxt.setText("Welcome, " +  loginUser.getUsername() +"   ");
     }    
     
         /**
@@ -52,15 +58,23 @@ public class ProfessionalUIController implements Initializable {
      * Display HistoryData
      */
     public void handleDataHistory(ActionEvent event) throws IOException{
-       // Navigation navigation = new  Navigation();
-      //  navigation.handleLogOut();
+       ViewOWDataController  viewOWDataController  = new ViewOWDataController();
+       viewOWDataController.userSet(loginUser);
+       Parent root = FXMLLoader.load(getClass().getResource("/ProfessionalFunctionManage/ViewOWData.fxml"));
+       FlintWater.stage.setScene(new Scene(root));
+       FlintWater.stage.setTitle("ProfessionalData ");
     }
     
     /**
      * Display HistoryData
      */
     public void handleUploadData(ActionEvent event) throws IOException{
-       // Navigation navigation = new  Navigation();
-      //  navigation.handleLogOut();
+      
+         UploadOWDataController  uploadOWDataController  = new UploadOWDataController();
+       uploadOWDataController.userSet(loginUser);
+       Parent root = FXMLLoader.load(getClass().getResource("/ProfessionalFunctionManage/UploadOWData.fxml"));
+       FlintWater.stage.setScene(new Scene(root));
+       FlintWater.stage.setTitle("Professional-Upload ");     
     }
 }
+

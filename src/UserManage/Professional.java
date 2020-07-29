@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package UserManage;
-import DataManage.OfficialWaterData;
+import DataManage.ProfessionalWaterData;
 import java.time.LocalDate;
 import java.util.ArrayList;
 /**
@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class Professional extends User{
      
-     private ArrayList<OfficialWaterData> OWData;
+     private ArrayList<ProfessionalWaterData> OWData;
         
     /**
      * This is the constructor for the Resident class
@@ -36,7 +36,7 @@ public class Professional extends User{
      * @return an OffcialWaterData list of an organization
      */
     
-   public ArrayList<OfficialWaterData> getOWData(String username){
+   public ArrayList<ProfessionalWaterData> getOWData(String username){
         return OWData;
     }
    
@@ -45,7 +45,7 @@ public class Professional extends User{
      * @param OWData an OffcialWaterData list of an organization 
      */
     
-   public void setOfficialWaterData(ArrayList<OfficialWaterData> OWData)
+   public void setOfficialWaterData(ArrayList<ProfessionalWaterData> OWData)
    {
        this.OWData = OWData;
    }

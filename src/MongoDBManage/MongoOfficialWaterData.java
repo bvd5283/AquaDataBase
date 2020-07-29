@@ -11,6 +11,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import static com.mongodb.client.model.Filters.and;
+import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Filters.gte;
 import static com.mongodb.client.model.Filters.lt;
 import java.text.ParseException;
@@ -18,6 +19,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import org.bson.Document;
+import org.bson.conversions.Bson;
 
 /**
  *
@@ -36,15 +38,31 @@ public class MongoOfficialWaterData {
      * @return   A Arraylist representing all water data in DB
      * @param collection Sets the collection of DB
      */
-     public ArrayList<OfficialData> findWater(MongoCollection collection) throws ParseException  {
+     public ArrayList<OfficialData> findWater(MongoCollection collection,String date1, String date2,String address1,String zip1) throws ParseException  {
          ArrayList<OfficialData> officialData = new ArrayList<>();
        //  FindIterable<Document> findIterable = collection.find(); 
         
          // SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");  
          SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy"); 
-         Date date1 =  format.parse("1/1/2020");
-         Date date2 =  format.parse("4/1/2020");
-         FindIterable<Document> findIterable = collection.find(and(gte("Date", date1), lt("Date",date2)));
+         Date dateSearch1 =  format.parse(date1);
+         Date dateSearch2 =  format.parse(date2);
+         // Date dateSearch1 =  format.parse("1/1/2020");
+        // Date dateSearch2 =  format.parse("3/1/2020");
+          FindIterable<Document> findIterable  = collection.find(and(gte("Date",dateSearch1), lt("Date",dateSearch2)));
+         
+          if(address1.length() ==0 && zip1.length() ==0)
+             findIterable = collection.find(and(gte("Date",dateSearch1), lt("Date",dateSearch2)));   
+          else
+             if(address1.length() ==0 && zip1.length()> 0)
+              findIterable = collection.find(and(gte("Date",dateSearch1), lt("Date",dateSearch2),eq("Zip",zip1)));  
+           else
+             if(address1.length() > 0 && zip1.length()== 0)
+               findIterable = collection.find(and(gte("Date",dateSearch1), lt("Date",dateSearch2),eq("Address",address1)));
+             else
+               if(address1.length() > 0 && zip1.length()> 0)
+                  findIterable = collection.find(and(gte("Date",dateSearch1), lt("Date",dateSearch2),eq("Address",address1),eq("Zip",zip1)));
+      // FindIterable<Document> findIterable = collection.find(eq("Zip","48504"));
+         // FindIterable<Document> findIterable = collection.find(and(gte("Date", date1), lt("Date",date2),eq("Zip","48504"),eq("Address","WOLCOTT ST")));
        //  FindIterable<Document> findIterable = collection.find(and(gte("birthDate", dateofbirth1), lt("birthDate",dateofbirth2)));  
        
          MongoCursor<Document> mongoCursor = findIterable.iterator();  

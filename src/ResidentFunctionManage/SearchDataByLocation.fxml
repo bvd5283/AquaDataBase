@@ -52,7 +52,7 @@
          </font>
       </Label>
       <TextField fx:id="STNumField" layoutX="125.0" layoutY="116.0" prefWidth="150.0" />
-      <TextField fx:id="STNumField1" layoutX="376.0" layoutY="115.0" prefWidth="150.0" />
+      <TextField fx:id="ZipCodeField" layoutX="376.0" layoutY="115.0" prefWidth="150.0" />
       <DatePicker fx:id="TestDatePicker" layoutX="125.0" layoutY="147.0" prefWidth="150.0" />
       <Button fx:id="submitButton" layoutX="313.0" layoutY="159.0" mnemonicParsing="false" onAction="#handleSubmit" prefHeight="27.0" prefWidth="100.0" text="Search" />
       <TableView fx:id="UserLeadTable" layoutX="17.0" layoutY="241.0" prefHeight="108.0" prefWidth="539.0">
@@ -109,5 +109,10 @@
          </font>
       </Text>
       <Button fx:id="submitButton1" layoutX="433.0" layoutY="159.0" mnemonicParsing="false" onAction="#handleSubmit" prefHeight="27.0" prefWidth="100.0" text="Reset" />
+      <Label fx:id="Status" alignment="CENTER" layoutX="25.0" layoutY="37.0" prefHeight="21.0" prefWidth="321.0" textFill="RED">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
