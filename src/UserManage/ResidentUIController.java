@@ -5,15 +5,20 @@
  */
 package UserManage;
 
+import flintwater.FlintWater;
 import flintwater.Navigation;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.text.Text;
+import ResidentFunctionManage.UploadUWDataController;
 
 /**
  * FXML Controller class
@@ -58,6 +63,15 @@ public class ResidentUIController implements Initializable {
     public void  HandleOfficalData(ActionEvent event) throws IOException{
         Navigation navigation = new  Navigation();
         navigation.HandleOfficalData();
+    }
+    
+    public void  HandleResidentDataUpload(ActionEvent event) throws IOException{
+        
+       UploadUWDataController  uploadUWDataController  = new UploadUWDataController();
+       uploadUWDataController.userSet(loginUser);
+       Parent root = FXMLLoader.load(getClass().getResource("/ResidentFunctionManage/UploadUWData.fxml"));
+       FlintWater.stage.setScene(new Scene(root));
+       FlintWater.stage.setTitle("UploadYourData");
     }
     
 }

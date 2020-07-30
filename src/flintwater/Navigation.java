@@ -31,5 +31,12 @@ public class Navigation {
        FlintWater.stage.setScene(new Scene(root));
        FlintWater.stage.setTitle("OfficalData");
     }
+     
+     public void  HandleResidentDataUpload() throws IOException{
+
+       Parent root = FXMLLoader.load(getClass().getResource("/ResidentFunctionManage/UploadUWData.fxml"));
+       FlintWater.stage.setScene(new Scene(root));
+       FlintWater.stage.setTitle("UploadYourData");
+    }
    
 }
